@@ -1,0 +1,10 @@
+language: python
+sudo: false
+python:
+  - "3.6"
+install:
+  - pipenv install
+  - make install
+script:
+  - make test
+  - make stylecheck
