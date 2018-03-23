@@ -1,0 +1,1 @@
+from callprofilerext import Profiler

@@ -1,0 +1,7 @@
+# Temporary and build files.
+.coverage
+.mypy*
+__pycache__
+*.pyc
+.DS_Store
+.#*
