@@ -63,8 +63,13 @@ static PyObject *ProfilerFrame_description_getter(ProfilerFrame *self, void *clo
 
 
 static PyObject *ProfilerFrame_parent_getter(ProfilerFrame *self, void *closure) {
-    Py_INCREF(self->parent);
-    return (PyObject *)self->parent;
+    if (self->parent) {
+        Py_INCREF(self->parent);
+        return (PyObject *)self->parent;
+    }
+
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 
