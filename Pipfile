@@ -10,6 +10,7 @@ name = "pypi"
 nose = "*"
 rednose = "*"
 "flake8" = "*"
+mypy = "*"
 
 
 [dev-packages]
