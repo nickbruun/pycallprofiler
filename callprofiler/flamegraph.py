@@ -41,8 +41,9 @@ def profile_as_flamegraph_log(writer: IO[bytes]) -> Iterator[None]:
     profiler = Profiler()
     profiler.start()
 
-    yield
+    try:
+        yield
+    finally:
+        profiler.stop()
 
-    profiler.stop()
-
-    write_profile_as_flamegraph_log(profiler, writer)
+        write_profile_as_flamegraph_log(profiler, writer)
